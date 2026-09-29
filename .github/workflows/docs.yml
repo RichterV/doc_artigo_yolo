@@ -1,8 +1,11 @@
 name: Deploy MkDocs site
 
+# Manual only: the site is currently served from "main / (root)" (see commit.sh).
+# To switch to Actions-based deployment, set Settings > Pages > Source to
+# "GitHub Actions" and re-enable the push trigger below.
 on:
-  push:
-    branches: [main]
+  # push:
+  #   branches: [main]
   workflow_dispatch:
 
 permissions:

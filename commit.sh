@@ -71,6 +71,16 @@ fi
 echo "==> Building site"
 "$VENV/bin/mkdocs" build --strict --clean
 
+# GitHub Pages serves "main / (root)": copy the built site to the repository
+# root (index.html takes precedence over README.md) and disable Jekyll.
+echo "==> Copying built site to repository root"
+cp -r site/. ./
+touch .nojekyll
+FILES+=(.nojekyll)
+for item in site/*; do
+  FILES+=("$(basename "$item")")
+done
+
 # 3. Initialise the repository on first use
 if [ ! -d .git ]; then
   echo "==> Initialising git repository"
