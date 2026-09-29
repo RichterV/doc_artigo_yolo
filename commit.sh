@@ -25,6 +25,7 @@ FILES=(
   requirements-docs.txt
   commit.sh
   .gitignore
+  .github
   docs
   site
 )
