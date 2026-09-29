@@ -1,0 +1,113 @@
+site_name: RMD Spatial–Spectral Classification — Reproduction Guide
+site_description: >-
+  Step-by-step guide to reproduce the spatial–spectral trade-off experiment
+  for RPAS-based phytosanitary classification of Eucalyptus saligna
+  (native RGB, harmonized RGB, narrowband RGB, CCCI and PSRI with a common U-Net++).
+site_author: Sally Deborah Pereira da Silva, Vinicius Richter et al.
+repo_url: https://github.com/RichterV/doc_artigo_yolo
+repo_name: RichterV/doc_artigo_yolo
+edit_uri: ""
+
+theme:
+  name: material
+  language: en
+  icon:
+    logo: material/tree
+    repo: fontawesome/brands/github
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: green
+      accent: light green
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: green
+      accent: light green
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - navigation.indexes
+    - toc.follow
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - footnotes
+  - def_list
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.blocks.caption
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+nav:
+  - Home: index.md
+  - Getting started:
+      - getting-started/index.md
+      - Environment: getting-started/environment.md
+      - Input data: getting-started/data.md
+      - Run order (cheat sheet): getting-started/run-order.md
+  - Pipeline:
+      - pipeline/index.md
+      - 1. Imagery and preprocessing: pipeline/01-imagery.md
+      - 2. Building the five representations: pipeline/02-representations.md
+      - 3. Reference data and splits: pipeline/03-reference-data.md
+      - 4. Patch extraction: pipeline/04-patch-extraction.md
+      - 5. U-Net++ classifier: pipeline/05-model.md
+      - 6. Training protocol: pipeline/06-training.md
+      - 7. Validation predictions: pipeline/07-predictions.md
+      - 8. Paired statistics: pipeline/08-statistics.md
+      - 9. Expected results: pipeline/09-expected-results.md
+  - Reference:
+      - reference/index.md
+      - Scripts: reference/scripts.md
+      - Configuration files: reference/configuration.md
+      - File formats: reference/file-formats.md
+      - Paper vs. code: reference/paper-vs-code.md
+      - Glossary (PT → EN): reference/glossary.md
+  - Extras:
+      - extras/index.md
+      - RGB vegetation indices: extras/rgb-indices.md
+      - Wall-to-wall mapping: extras/mapping.md
+      - Explainability (XAI): extras/xai.md
+
+validation:
+  links:
+    anchors: warn
+    unrecognized_links: warn

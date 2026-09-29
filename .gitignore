@@ -1,0 +1,6 @@
+/*.docx
+/*.jpeg
+/linux/
+__pycache__/
+.venv/
+*Zone.Identifier
